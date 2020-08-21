@@ -12,12 +12,7 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
-        // $request->validate([
-        //     'name' => 'required|min:3',
-        //     'email' => 'required | email | unique:users',
-        //     'password' => 'required | min:3',
-        // ]);
-
+     
         $rules = [
             'name' => 'required|min:3',
             'email' => 'required | email | unique:users',

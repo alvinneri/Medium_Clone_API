@@ -20,7 +20,7 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        //
+        return Article::all();
     }
 
     /**
@@ -41,12 +41,10 @@ class ArticlesController extends Controller
      */
     public function store(StoreArticleRequest $request)
     {   
-        $user = Auth::user();   
+        
         $validated = $request->validated();
-      
-        $article = $user->articles()->create($validated);
+        $article = $this->getuser()->articles()->create($validated);
 
-    
         return new ArticleResource($article);
     }
 
@@ -93,5 +91,10 @@ class ArticlesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getuser()
+    {
+        return Auth::user();  
     }
 }

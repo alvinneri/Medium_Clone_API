@@ -79,9 +79,18 @@ class ArticlesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreArticleRequest $request , Article $article)
     {
-        //
+       
+        $validated = $request->validated();
+        
+        // Log:info($validated)
+        // $article = $this->getuser()->articles()->update($validated);
+
+     
+        return new ArticleResource(
+            tap($article)->update($validated)
+        );
     }
 
     /**

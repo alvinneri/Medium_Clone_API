@@ -31,4 +31,5 @@ Route::namespace('Api\User')
     ->group(function(){
         Route::resource('article', 'ArticlesController');
         Route::get('article/get-articles-by-user/{user}', 'GetArticlesByUserController')->name('user.get-articles-by-user');
+        Route::get('article/get-articles-by-user-count/{user}', 'GetArticlesByUserCountController')->name('user.get-articles-by-user-count');
     });

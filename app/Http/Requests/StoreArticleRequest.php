@@ -27,6 +27,8 @@ class StoreArticleRequest extends FormRequest
             'title' => 'required|unique:articles|max:50',
             'contents' => 'required|unique:articles|max:1000',
         ];
+
+        
     }
 }
 

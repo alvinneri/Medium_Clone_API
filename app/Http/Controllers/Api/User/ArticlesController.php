@@ -81,7 +81,7 @@ class ArticlesController extends Controller
      */
     public function update(StoreArticleRequest $request , Article $article)
     {
-       
+       $this->authorize('update', $article);
         $validated = $request->validated();
         
         // Log:info($validated)

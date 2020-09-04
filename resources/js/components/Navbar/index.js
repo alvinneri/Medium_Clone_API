@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import NotSignedIn from "./NotSignedIn";
+import SignedIn from "./SignedIn";
 
 const Navbar = () => {
     const [hidden, setHidden] = useState("hidden");
+    const [isAuth, setIsAuth] = useState(false);
 
     const toggle = () => {
         if (hidden === "hidden") {
@@ -24,12 +27,11 @@ const Navbar = () => {
                     Toggle
                 </p>
 
-                <ul className={`${hidden} md:flex md:flex-row`}>
-                    <li className="pr-5">Sign In</li>
-                    <li className="pr-5">Sign Up</li>
-                    <li className="pr-5">Dashboard</li>
-                    <li className="pr-5">Logout</li>
-                </ul>
+                {!isAuth ? (
+                    <NotSignedIn hidden={hidden} />
+                ) : (
+                    <SignedIn hidden={hidden} />
+                )}
             </nav>
         </div>
     );

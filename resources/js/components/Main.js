@@ -1,12 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Navbar from "./Navbar";
+import Welcomepage from "./Landing/Welcomepage";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function Main() {
     return (
-        <div>
+        <Router>
             <Navbar />
-        </div>
+            <Switch>
+                <Route to="/" component={Welcomepage}></Route>
+            </Switch>
+        </Router>
     );
 }
 

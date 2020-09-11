@@ -69,8 +69,9 @@
 
 <body>
     <div id="root"></div>
+    <script src="./js/app.js" type="text/javascript"></script>
 </body>
 
-<script src="./js/app.js" type="text/javascript"></script>
+
 
 </html>

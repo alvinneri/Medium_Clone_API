@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Navbar from "./Navbar";
 import Welcomepage from "./Landing/Welcomepage";
+import Signup from "./Auth/Signup";
+import Signin from "./Auth/Signin";
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function Main() {
@@ -9,7 +12,9 @@ function Main() {
         <Router>
             <Navbar />
             <Switch>
-                <Route to="/" component={Welcomepage}></Route>
+                <Route exact path="/" component={Welcomepage} />
+                <Route path="/signup" component={Signup} />
+                <Route path="/signin" component={Signin} />
             </Switch>
         </Router>
     );
